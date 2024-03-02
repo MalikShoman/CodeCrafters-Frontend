@@ -10,7 +10,7 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent {
   loginForm: FormGroup;
-
+  userRole='admin';
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
@@ -23,12 +23,13 @@ export class LoginComponent {
   }
 
   login() {
+    this.router.navigate(['/view-hackathons']);
     if (this.loginForm.valid) {
       const loginData = this.loginForm.value;
       this.authService.login(loginData).subscribe(
         () => {
           // Redirect to appropriate page after successful login
-          this.router.navigate(['/dashboard']); // Change '/dashboard' to the desired route
+          this.router.navigate(['/view-hackathons']); // Change '/dashboard' to the desired route
         },
         error => {
           // Handle login error

@@ -10,11 +10,13 @@ import { Hackathon } from 'src/app/hackathon';
 })
 export class HackathonDetailsComponent implements OnInit {
 
+
+  isAdmin: any;
   newHackathon: Hackathon = new Hackathon('first', 'test', new Date(), new Date(), new Date(), ['title'], 0, 0);
   team = {
-    id:1,
+    id: 1,
     name: 'code crafters',
-    members:['ahmad','majd','rami']
+    members: ['ahmad', 'majd', 'rami']
   }
   teams: any[] = [];
 
@@ -23,6 +25,7 @@ export class HackathonDetailsComponent implements OnInit {
   ngOnInit(): void {
     // Get the hackathon ID from the route parameters
     const hackathonId = this.route.snapshot.paramMap.get('id');
+    this.isAdmin = (this.route.snapshot.paramMap.get('val'));
     this.teams.push(this.team);
     // // Fetch hackathon details from the backend
     // this.hackathonService.getHackathonById(hackathonId).subscribe((hackathon: any) => {
@@ -39,5 +42,7 @@ export class HackathonDetailsComponent implements OnInit {
     // Navigate back to the view-hackathons component
     this.router.navigate(['/view-hackathons']);
   }
-  
+  showCreate() {
+    this.router.navigate(['/create-hackathon']);
+  }
 }

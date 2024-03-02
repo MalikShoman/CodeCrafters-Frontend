@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -12,7 +13,9 @@ export class SignupComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
+
   ) {
     this.signUpForm = this.formBuilder.group({
       fullName: ['', Validators.required],
@@ -24,6 +27,7 @@ export class SignupComponent {
   }
 
   signUp() {
+    this.router.navigate(['/login']);
     if (this.signUpForm.valid) {
       const signUpData = this.signUpForm.value;
       this.authService.signUp(signUpData).subscribe(

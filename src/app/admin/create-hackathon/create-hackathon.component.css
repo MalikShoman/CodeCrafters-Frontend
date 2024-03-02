@@ -1,7 +1,8 @@
-button{
-    background-color: #001081;
+.btn-primary{
+    background-color: #1FED93;
+    border-color: #1FED93;
 }
 
-label{
-    color: #130D0D;
+h1,h2,h3,h4,h5{
+    color: #001081;
 }

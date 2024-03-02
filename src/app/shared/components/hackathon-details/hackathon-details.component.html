@@ -1,36 +1,41 @@
 <div class="container mt-4">
     <h2>Hackathon Details</h2>
-    <div class="card mb-4 shadow p-3 mb-5 bg-body-tertiary rounded ">
-      <div class="card-body">
-        <h5 class="card-title">{{ newHackathon.name }}</h5>
-        <p class="card-text">Theme: {{ newHackathon.theme }}</p>
-        <p class="card-text">Registration Start Date: {{ newHackathon.registrationStartDate }}</p>
-        <p class="card-text">Registration End Date: {{ newHackathon.registrationEndDate }}</p>
-        <p class="card-text">Event Date: {{ newHackathon.eventDate }}</p>
-        <p class="card-text">Challenge Titles: {{ newHackathon.challengeTitles }}</p>
-        <p class="card-text">Max Team Size: {{ newHackathon.maxTeamSize }}</p>
-        <p class="card-text">Max Number of Teams: {{ newHackathon.maxNumTeams }}</p>
-      </div>
+    <div *ngIf="isAdmin == 'true'" class="d-flex justify-content-end" style="margin-bottom: 10px;">
+        <button type="button" class="btn btn-primary" (click)="showCreate()">Create New Hackathons</button>
     </div>
-  
-    <h2>Enrolled Teams</h2>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Team ID</th>
-          <th>Team Name</th>
-          <th>Team Members</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let team of teams">
-          <td>{{ team.id }}</td>
-          <td>{{ team.name }}</td>
-          <td>{{ team.members.join(', ') }}</td>
-        </tr>
-      </tbody>
-    </table>
-  
-    <button type="button" class="btn btn-primary" (click)="goBack()">Back to newHackathons</button>
-  </div>
-  
+    <div class="card mb-4 shadow p-3 mb-5 bg-body-tertiary rounded ">
+        <div class="card-body">
+            <h5 class="card-title">{{ newHackathon.name }}</h5>
+            <p class="card-text">Theme: {{ newHackathon.theme }}</p>
+            <p class="card-text">Registration Start Date: {{ newHackathon.registrationStartDate }}</p>
+            <p class="card-text">Registration End Date: {{ newHackathon.registrationEndDate }}</p>
+            <p class="card-text">Event Date: {{ newHackathon.eventDate }}</p>
+            <p class="card-text">Challenge Titles: {{ newHackathon.challengeTitles }}</p>
+            <p class="card-text">Max Team Size: {{ newHackathon.maxTeamSize }}</p>
+            <p class="card-text">Max Number of Teams: {{ newHackathon.maxNumTeams }}</p>
+        </div>
+    </div>
+
+    <div *ngIf="isAdmin == 'true' ">
+        <h2>Enrolled Teams</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Team ID</th>
+                    <th>Team Name</th>
+                    <th>Team Members</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let team of teams">
+                    <td>{{ team.id }}</td>
+                    <td>{{ team.name }}</td>
+                    <td>{{ team.members.join(', ') }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="button" class="btn btn-primary" (click)="goBack()">Back to Hackathons</button>
+
+</div>

@@ -10,6 +10,7 @@ import { Hackathon } from 'src/app/hackathon';
 })
 export class ViewHackathonsComponent implements OnInit {
 
+  isAdmin: boolean = true;
   hackathons: any[] = [];
   newHackathon: Hackathon = new Hackathon('first', 'test', new Date(), new Date(), new Date(), ['title'], 0, 0);
   constructor(private hackathonService: HackathonService, private router: Router) { }
@@ -24,7 +25,7 @@ export class ViewHackathonsComponent implements OnInit {
 
   redirectToDetails(hackathonId: string): void {
     // Redirect to hackathon-details component with the hackathon ID
-    this.router.navigate(['/hackathon-details', hackathonId]);
+    this.router.navigate(['/hackathon-details', this.isAdmin]);
   }
 
 }

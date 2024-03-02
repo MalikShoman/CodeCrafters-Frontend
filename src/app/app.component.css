@@ -1,0 +1,107 @@
+.navbar {
+  background-color: rgb(255, 255, 255);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar .logo img {
+  height: 40px;
+}
+
+.blue-btn {
+  background-color: rgb(0, 5, 243);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-left: 10px;
+}
+
+.content {
+  background-color: white;
+  padding: 20px; /* Adjust padding if needed */
+  text-align: center;
+  background-image:"assets/images/background_ejada.png";
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+
+/* CSS */
+.button-68 {
+  appearance: none;
+  margin: 4px;
+  backface-visibility: hidden;
+  background-color: #56de8f;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(120, 244, 172, 0.15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.button-68:hover {
+  background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+.button-68:active {
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.button-68:hover {
+  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+}
+
+.footer {
+  background-color: blue;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.greeting {
+  color: green;
+  font-size: 24px;
+}
+
+
+.footer .info p {
+  margin: 0;
+}
+
+.footer .images img {
+  max-height: 50px;
+  margin-left: 10px;
+}

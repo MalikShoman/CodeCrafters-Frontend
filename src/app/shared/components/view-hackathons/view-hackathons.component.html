@@ -1,23 +1,20 @@
 <div class="container mt-4">
-    <h2>Hackathons</h2>
-    <p style="color: #1FED93;">List of upcoming hackathons:</p>
+    <h2>{{'hackathons' | translate}}</h2>
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Date</th>
-          <th>Location</th>
-          <th>Organizer</th>
-          <th>Actions</th>
+          <th>{{'Name'|translate}}</th>
+          <th>{{'Date'|translate}}</th>
+          <th>{{'Theme'| translate}}</th>
+          <th>{{'Actions'| translate}}</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let hackathon of hackathons">
           <td>{{ hackathon.name }}</td>
           <td>{{ hackathon.date }}</td>
-          <td>{{ hackathon.location }}</td>
-          <td>{{ hackathon.organizer }}</td>
-          <td><button type="button" class="btn btn-primary" (click)="redirectToDetails(hackathon.id)">Details</button></td>
+          <td>{{ hackathon.theme }}</td>
+          <td><button type="button" class="btn btn-primary" (click)="redirectToDetails(hackathon.id)">{{'Details'| translate}}</button></td>
         </tr>
       </tbody>
     </table>

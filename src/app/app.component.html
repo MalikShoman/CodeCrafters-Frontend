@@ -1,8 +1,10 @@
 <!-- Header -->
 <app-navbar></app-navbar>
-
+<button class="btn btn-primary mr-10" (click)="switchLanguage('en')">English</button>
+<button class="btn btn-primary" (click)="switchLanguage('ar')">Arabic</button>
 <!-- Body -->
 <main class="content">
+
   <router-outlet></router-outlet>
 </main>
 

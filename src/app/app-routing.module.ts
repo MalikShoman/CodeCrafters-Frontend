@@ -11,19 +11,17 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signUp', component: SignupComponent },
   { path: 'login', component: LoginComponent },
+    // { path: '', component: HomeComponent },
+    { path: 'create-hackathon', component: CreateHackathonComponent },
+    { path: 'view-hackathons', component: ViewHackathonsComponent },
+    { path: 'hackathon-details', component: HackathonDetailsComponent },
+  
+    // { path: 'hackathons/:id', component: HackathonDetailsComponent },
+    // { path: 'competitor/register', component: RegisterComponent },
+    // { path: 'competitor/login', component: LoginComponent },
+    // { path: 'admin/add-hackathon', component: AddHackathonComponent },
 
 
-];
-const routes: Routes = [
-  // { path: '', component: HomeComponent },
-  { path: 'create-hackathon', component: CreateHackathonComponent },
-  { path: 'view-hackathons', component: ViewHackathonsComponent },
-  { path: 'hackathon-details', component: HackathonDetailsComponent },
-
-  // { path: 'hackathons/:id', component: HackathonDetailsComponent },
-  // { path: 'competitor/register', component: RegisterComponent },
-  // { path: 'competitor/login', component: LoginComponent },
-  // { path: 'admin/add-hackathon', component: AddHackathonComponent },
 ];
 
 @NgModule({

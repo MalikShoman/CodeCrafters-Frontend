@@ -18,11 +18,12 @@ import { DialogModule } from 'primeng/dialog';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -35,27 +36,21 @@ import { HomeComponent } from './home/home.component';
     CreateHackathonComponent,
     ViewHackathonsComponent,
     HackathonDetailsComponent,
-      HomeComponent
-   ],
-    HackathonDetailsComponent,
+      HomeComponent,
     NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule
-  ],
-    AppRoutingModule,
     FormsModule,
-    BreadcrumbModule,
     TableModule,
     DropdownModule,
-    DialogModule,
     ButtonModule,
     CalendarModule,
     CheckboxModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

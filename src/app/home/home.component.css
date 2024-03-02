@@ -1,0 +1,12 @@
+
+.text-overlay {
+    position: absolute;
+    font-size: 42px;
+    font-family: "Readex Pro";
+    top: 45%;
+    left: 50%;
+    transform: translate(-10%, -50%); /* Center the text */
+    text-align: center; /* Center the text horizontally */
+    color: #001081; /* Set the text color (optional) */
+  }
+  

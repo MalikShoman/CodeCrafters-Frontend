@@ -12,15 +12,15 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signUp', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-    // { path: '', component: HomeComponent },
-    { path: 'create-hackathon', component: CreateHackathonComponent },
-    { path: 'view-hackathons', component: ViewHackathonsComponent },
-    { path: 'hackathon-details/:val', component: HackathonDetailsComponent },
-    // { path: 'after-login', component: AfterLoginComponent },
+  // { path: '', component: HomeComponent },
+  { path: 'create-hackathon', component: CreateHackathonComponent },
+  { path: 'view-hackathons', component: ViewHackathonsComponent },
+  { path: 'hackathon-details/:val', component: HackathonDetailsComponent },
+  // { path: 'after-login', component: AfterLoginComponent },
 
-    // { path: 'hackathons/:id', component: HackathonDetailsComponent },
-    // { path: 'competitor/register', component: RegisterComponent },
-    // { path: 'competitor/login', component: LoginComponent },
+  // { path: 'hackathons/:id', component: HackathonDetailsComponent },
+  // { path: 'competitor/register', component: RegisterComponent },
+  // { path: 'competitor/login', component: LoginComponent },
 
 
 ];

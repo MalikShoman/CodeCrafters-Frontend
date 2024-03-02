@@ -9,16 +9,14 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginForm!: FormGroup; // Add '!' to indicate it will be initialized later
 
-export class LoginComponent {
-  loginForm: FormGroup;
-  userRole='admin';
+  loginForm!: FormGroup; // Add '!' to indicate it will be initialized later
+  userRole = 'admin';
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -43,5 +41,9 @@ export class LoginComponent {
         }
       );
     }
+  }
+
+  showSignUp() {
+    this.router.navigate(['/signUp']);
   }
 }

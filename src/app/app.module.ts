@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -21,10 +22,11 @@ import { FormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     LoginComponent,
     AfterLoginComponent,
@@ -33,10 +35,17 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     CreateHackathonComponent,
     ViewHackathonsComponent,
     HackathonDetailsComponent,
+      HomeComponent
+   ],
+    HackathonDetailsComponent,
     NavbarComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
     AppRoutingModule,
     FormsModule,
     BreadcrumbModule,

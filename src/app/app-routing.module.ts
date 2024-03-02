@@ -3,7 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { CreateHackathonComponent } from './admin/create-hackathon/create-hackathon.component';
 import { ViewHackathonsComponent } from './shared/components/view-hackathons/view-hackathons.component';
 import { HackathonDetailsComponent } from './shared/components/hackathon-details/hackathon-details.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import { HomeComponent } from './home/home.component';
 
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'signUp', component: SignupComponent },
+  { path: 'login', component: LoginComponent },
+
+
+];
 const routes: Routes = [
   // { path: '', component: HomeComponent },
   { path: 'create-hackathon', component: CreateHackathonComponent },

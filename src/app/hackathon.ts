@@ -6,8 +6,7 @@ export class Hackathon {
       public registrationEndDate: Date,
       public eventDate:  Date,
       public challengeTitles: string[],
-      public maxTeamSize: number,
+      public maxTeamSize: number  ,
       public maxNumTeams: number
     ) {}
   }
-  

@@ -7,12 +7,12 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://your-api-url/auth'; // Update with your actual API URL
+  private apiUrl = 'http://localhost:8746/api/auth'; // Update with your actual API URL
 
   constructor(private http: HttpClient) { }
 
   signUp(signUpData: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/signup`, signUpData).pipe(
+    return this.http.post<any>(`${this.apiUrl}/register`, signUpData).pipe(
       catchError(error => {
         throw error;
       })
@@ -20,7 +20,7 @@ export class AuthService {
   }
 
   login(loginData: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/login`, loginData).pipe(
+    return this.http.post<any>(`${this.apiUrl}`, loginData).pipe(
       catchError(error => {
         throw error;
       })

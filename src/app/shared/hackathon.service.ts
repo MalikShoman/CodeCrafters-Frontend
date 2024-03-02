@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HackathonService {
-  private apiUrl = 'http://your-api-url/hackathons'; // Update with your actual API URL
+  private apiUrl = 'http://localhost:8746/api/hackathons'; // Update with your actual API URL
 
   constructor(private http: HttpClient) { }
 
@@ -18,8 +18,8 @@ export class HackathonService {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 
-  registerForHackathon(hackathonId: number): Observable<any> {
+  registerForHackathon(competitors: any): Observable<any> {
     // Implement registration logic here
-    return this.http.post<any>(`${this.apiUrl}/register`, { hackathonId });
+    return this.http.post<any>(`http://localhost:8746/api/competitors`, {competitors });
   }
 }

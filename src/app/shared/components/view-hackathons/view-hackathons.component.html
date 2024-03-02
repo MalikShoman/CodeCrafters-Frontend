@@ -1,1 +1,25 @@
-<p>view-hackathons works!</p>
+<div class="container mt-4">
+    <h2>Hackathons</h2>
+    <p style="color: #1FED93;">List of upcoming hackathons:</p>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Location</th>
+          <th>Organizer</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hackathon of hackathons">
+          <td>{{ hackathon.name }}</td>
+          <td>{{ hackathon.date }}</td>
+          <td>{{ hackathon.location }}</td>
+          <td>{{ hackathon.organizer }}</td>
+          <td><button type="button" class="btn btn-primary" (click)="redirectToDetails(hackathon.id)">Details</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

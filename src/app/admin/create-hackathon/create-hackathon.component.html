@@ -1,1 +1,44 @@
-<p>create-hackathon works!</p>
+ <div class="container mt-4">
+    <h5>Create New Hackathon</h5>
+    <div class="card-body">
+      <div class="form-group mb-3">
+        <label for="hackathonName">Name</label>
+        <input type="text" class="form-control" id="hackathonName" [(ngModel)]="newHackathon.name" required>
+      </div>
+      <div class="form-group mb-3">
+        <label for="hackathonTheme">Theme</label>
+        <input type="text" class="form-control" id="hackathonTheme" [(ngModel)]="newHackathon.theme" required>
+      </div>
+      <div class="form-group mb-3">
+        <label for="registrationStartDate">Registration Start Date </label><br>
+        <p-calendar id="registrationStartDate" [(ngModel)]="newHackathon.registrationStartDate" dateFormat="dd/mm/yy" ></p-calendar>
+      </div>
+      <div class="form-group mb-3">
+        <label for="registrationEndDate">Registration End Date </label><br>
+        <p-calendar id="registrationEndDate" [(ngModel)]="newHackathon.registrationEndDate" dateFormat="dd/mm/yy" ></p-calendar>
+      </div>
+      <div class="form-group mb-3">
+        <label for="eventDate">Event Date </label><br>
+        <p-calendar id="eventDate" [(ngModel)]="newHackathon.eventDate" dateFormat="dd/mm/yy" ></p-calendar>
+      </div>
+      <div class="form-group mb-3">
+        <label for="challengeTitles">Challenge Titles</label>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let title of newHackathon.challengeTitles; let i = index">
+            <input type="text" class="form-control" [(ngModel)]="newHackathon.challengeTitles[i]" required>
+            <button type="button" class="btn btn-danger btn-sm float-right" (click)="removeChallengeTitle(i)">Remove</button>
+          </li>
+        </ul>
+        <button type="button" class="btn btn-primary" (click)="addChallengeTitle()">Add Challenge</button>
+      </div>
+      <div class="form-group mb-3">
+        <label for="maxTeamSize">Maximum Team Size</label>
+        <input type="number" class="form-control" id="maxTeamSize" [(ngModel)]="newHackathon.maxTeamSize" required>
+      </div>
+      <div class="form-group mb-3">
+        <label for="maxNumTeams">Maximum Number of Teams</label>
+        <input type="number" class="form-control" id="maxNumTeams" [(ngModel)]="newHackathon.maxNumTeams" required>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="onSubmit()">Create Hackathon</button>
+    </div>
+  </div>  

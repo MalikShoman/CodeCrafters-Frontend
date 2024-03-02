@@ -6,12 +6,12 @@
           class="img-fluid" alt="Sample image">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form (submit)="login()">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
           <!-- Email input -->
           <div class="form-outline mb-4">
-            <label class="form-label" for="form3Example3">Email address</label>
-            <input type="email" id="form3Example3" name="email" class="form-control form-control-lg"
-              placeholder="Enter a valid email address" />
+            <label class="form-label" for="username">UserName</label>
+            <input type="text" id="username" formControlName="username" class="form-control form-control-lg"
+              placeholder="username" />
           </div>
 
           <!-- Password input -->
@@ -28,9 +28,7 @@
                 class="link-danger">{{'sign_up' |translate}}</a></p>
           </div>
         </form>
-
       </div>
     </div>
   </div>
-
 </section>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+// signup.component.ts
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
@@ -8,8 +9,8 @@ import { Router } from '@angular/router';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent {
-  signUpForm: FormGroup;
+export class SignupComponent implements OnInit {
+  signUpForm!: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -17,17 +18,22 @@ export class SignupComponent {
     private router: Router
 
   ) {
+    private authService: AuthService
+  ) { }
+
+  ngOnInit(): void {
     this.signUpForm = this.formBuilder.group({
-      fullName: ['', Validators.required],
-      
+      name: ['', Validators.required],
+      username: ['', Validators.required],
+      mobile: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required]
-      // Add more fields as needed
     });
   }
 
   signUp() {
-    this.router.navigate(['/login']);
+    console.log("inside singUp")
+    console.log(this.signUpForm)
     if (this.signUpForm.valid) {
       const signUpData = this.signUpForm.value;
       this.authService.signUp(signUpData).subscribe(
@@ -40,6 +46,7 @@ export class SignupComponent {
           console.error('Sign-up failed:', error);
         }
       );
+      console.log("out of the if statment")
     }
   }
 }

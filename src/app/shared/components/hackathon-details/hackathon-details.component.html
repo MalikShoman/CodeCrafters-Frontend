@@ -3,6 +3,9 @@
     <div *ngIf="isAdmin == 'true'" class="d-flex justify-content-end" style="margin-bottom: 10px;">
         <button type="button" class="btn btn-primary" (click)="showCreate()">{{'add_new_hackathon'|translate}}</button>
     </div>
+    <div *ngIf="isAdmin == 'false'" class="d-flex justify-content-end" style="margin-bottom: 10px;">
+      <button type="button" class="btn btn-primary" (click)="showRegiter()">{{'Register_for_hackthon'|translate}}</button>
+  </div>
     <div class="card mb-4 shadow p-3 mb-5 bg-body-tertiary rounded ">
         <div class="card-body">
             <h5 class="card-title">{{ newHackathon.name }}</h5>
@@ -38,4 +41,25 @@
 
     <button type="button" class="btn btn-primary" (click)="goBack()">{{'Back to Hackathons'|translate}}</button>
 
+</div>
+<div class="container mt-4" *ngIf="isRegister == true">
+  <h5>{{'add_new_hackathon'|translate}}</h5>
+  <div class="card-body">
+    <div class="form-group mb-3">
+      <label for="hackathonName">{{'Team Name'|translate}}</label>
+      <input type="text" class="form-control" id="hackathonName" [(ngModel)]="newHackathon.name" required>
+    </div>
+    <div class="form-group mb-3">
+      <label for="maxTeamSize">{{'Team Size'|translate}}</label>
+      <input type="number" class="form-control" id="maxTeamSize" [(ngModel)]="newHackathon.maxTeamSize" required>
+    </div>
+    <div class="form-group mb-3">
+      <label *ngFor="let c of newHackathon.challengeTitles" for="challenge">{{c}}</label>
+  </div>
+    <!-- <div *ngFor="let t of newHackathon.maxTeamSize" class="form-group mb-3">
+      <label for="hackathonName">{{'Team Name'|translate}}</label>
+      <input type="text" class="form-control" id="hackathonName" [(ngModel)]="newHackathon.name" required>
+    </div> -->
+    <!-- <button type="submit" class="btn btn-primary" (click)="onSubmit()">{{'add_new_hackathon'|translate}}</button> -->
+  </div>
 </div>

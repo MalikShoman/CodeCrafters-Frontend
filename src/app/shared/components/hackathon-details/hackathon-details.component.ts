@@ -12,6 +12,7 @@ export class HackathonDetailsComponent implements OnInit {
 
 
   isAdmin: any;
+  isRegister:boolean = false
   newHackathon: Hackathon = new Hackathon('first', 'test', new Date(), new Date(), new Date(), ['title'], 0, 0);
   team = {
     id: 1,
@@ -38,6 +39,9 @@ export class HackathonDetailsComponent implements OnInit {
     // });
   }
 
+  showRegiter(){
+   this.isRegister  = true;
+  }
   goBack(): void {
     // Navigate back to the view-hackathons component
     this.router.navigate(['/view-hackathons']);

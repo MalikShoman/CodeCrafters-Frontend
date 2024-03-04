@@ -2,8 +2,11 @@
     <div class="logo">
         <img src="assets/images/layout_set_logo.png" routerLink="" alt="Ejada Logo">
     </div>
-    <div *ngIf="isAdmin == undefined" class="buttons">
+    <div *ngIf="isLogedIn() == false" class="buttons">
         <button class="button-68" role="button" routerLink="signUp">{{'sign_up' |translate}}</button>
         <button class="button-68" role="button" routerLink="login">{{'login' |translate}}</button>
     </div>
+    <div *ngIf="isLogedIn() == true" class="buttons">
+      <button class="button-68" role="button" (click)="logOut()">{{'logOut' |translate}}</button>
+  </div>
 </header>

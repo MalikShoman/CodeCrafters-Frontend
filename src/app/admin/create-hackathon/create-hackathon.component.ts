@@ -18,9 +18,11 @@ export class CreateHackathonComponent implements OnInit {
   ngOnInit() { }
 
   addChallengeTitle() {
+    this.newHackathon.challengeTitles.push('');
   }
 
   removeChallengeTitle(index: number) {
+    this.newHackathon.challengeTitles.splice(index, 1);
   }
 
   onSubmit() {

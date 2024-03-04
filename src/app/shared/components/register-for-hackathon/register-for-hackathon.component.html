@@ -1,0 +1,32 @@
+<div class="container mt-4">
+    <h5>{{'add_new_hackathon'|translate}}</h5>
+    <div class="card-body">
+        <div class="form-group mb-3">
+            <label for="hackathonName">{{'Team Name'|translate}}</label>
+            <input type="text" class="form-control" id="hackathonName" [(ngModel)]="newCompetitor.teamName" required>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="challengeTitles">{{'Challenge Titles'|translate}}</label>
+              <div class="list-group-item" *ngFor="let title of newCompetitor.competitors; let i = index">
+                <input type="text" id="challengeTitles" class="form-control" [(ngModel)]="newCompetitor.competitors[i]" required>
+                <button type="button" class="btn btn-danger btn-sm float-right"
+                  (click)="removeCompetitor(i)">Remove</button>
+              </div>
+            <button type="button" class="btn btn-primary" (click)="addCompetitor()">{{'Add Competitor'|translate}}</button>
+          </div>
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Select Option
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" *ngFor="let challenge of newHackathon.challengeTitles" (click)="selectedChallenge(challenge.id)">{{
+                    challenge.title }}</a>
+            </div>
+        </div>
+    </div>
+    <p></p>
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()">{{'Register_for_hackthon'|translate}}</button>
+</div>

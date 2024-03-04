@@ -39,6 +39,12 @@ export class LoginComponent implements OnInit {
           this.authService.LogedIn = true;
           // Redirect to appropriate page after successful login
           localStorage.setItem("token",result.token);
+          if (this.user.username == 'admin') {
+            localStorage.setItem("isAdmin",'true');
+          }
+          else{
+            localStorage.setItem("isUser",'true');
+          }
           this.router.navigate(['/view-hackathons']); // Change '/dashboard' to the desired route
         }),
         error => {

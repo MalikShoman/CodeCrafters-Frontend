@@ -25,7 +25,7 @@ export class ViewHackathonsComponent implements OnInit {
 
   redirectToDetails(hackathonId: string): void {
     // Redirect to hackathon-details component with the hackathon ID
-    this.router.navigate(['/hackathon-details', this.isAdmin]);
+    this.router.navigate(['/hackathon-details']);
   }
 
 }

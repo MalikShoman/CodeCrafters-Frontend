@@ -1,10 +1,17 @@
 import { Injectable } from '@angular/core';
+import { CanActivate } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGurdService {
+export class AuthGurdService implements CanActivate {
 
-constructor() { }
+  constructor() { }
 
+  canActivate(): boolean {
+    if (localStorage.getItem("isUser") == 'true') {
+      return true;
+    }
+    return false;
+  }
 }

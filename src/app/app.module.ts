@@ -25,6 +25,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { RegisterForHackathonComponent } from './shared/components/register-for-hackathon/register-for-hackathon.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -41,7 +42,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ViewHackathonsComponent,
     HackathonDetailsComponent,
       HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    RegisterForHackathonComponent
   ],
   imports: [
     BrowserModule,

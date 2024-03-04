@@ -11,7 +11,7 @@ import { Hackathon } from 'src/app/models/hackathon';
 export class HackathonDetailsComponent implements OnInit {
 
 
-  isAdmin: any;
+  isAdmin: boolean = false;
   isRegister:boolean = false
   newHackathon: Hackathon = new Hackathon('first', 'test', new Date(), new Date(), new Date(), ['title'], 0, 0);
   team = {
@@ -26,7 +26,9 @@ export class HackathonDetailsComponent implements OnInit {
   ngOnInit(): void {
     // Get the hackathon ID from the route parameters
     const hackathonId = this.route.snapshot.paramMap.get('id');
-    this.isAdmin = (this.route.snapshot.paramMap.get('val'));
+    if (localStorage.getItem("isAdmin")) {
+      this.isAdmin = true;
+    }
     this.teams.push(this.team);
     // // Fetch hackathon details from the backend
     // this.hackathonService.getHackathonById(hackathonId).subscribe((hackathon: any) => {
@@ -39,12 +41,12 @@ export class HackathonDetailsComponent implements OnInit {
     // });
   }
 
-  showRegiter(){
-   this.isRegister  = true;
+  showRegiter(currentHackathon: any){
+    this.router.navigate(['/reg-for-hackathon', currentHackathon.id]);
   }
   goBack(): void {
     // Navigate back to the view-hackathons component
-    this.router.navigate(['/view-hackathons']);
+    this.router.navigate(['/view-hackathons' ]);
   }
   showCreate() {
     this.router.navigate(['/create-hackathon']);

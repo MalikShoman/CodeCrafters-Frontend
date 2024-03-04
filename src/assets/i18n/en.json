@@ -1,6 +1,7 @@
 {
     "dir": "rtr",
     "login": "Login",
+    "logOut": "LogOut",
     "add_new_hackathon": "Add New Hackathon",
     "view_hackathons_and_hackathon_details": "view Hackathons and Hackathon Details",
     "sign_up": "Sign Up",

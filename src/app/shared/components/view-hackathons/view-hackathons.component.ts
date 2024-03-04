@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HackathonService } from '../../services/hackathon.service';
-import { Hackathon } from 'src/app/hackathon';
+import { HackathonService } from '../../hackathon.service';
+import { Hackathon } from 'src/app/models/hackathon';
 
 @Component({
   selector: 'app-view-hackathons',

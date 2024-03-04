@@ -1,6 +1,7 @@
 {
     "dir": "ltr",
     "login": " الدخول",
+    "logOut": "الخروج",
     "add_new_hackathon": "إضافة مسابقة جديدة",
     "view_hackathons_and_hackathon_details": "عرض المسابقات وتفاصيل المسابقة",
     "sign_up": "تسجيل الدخول",

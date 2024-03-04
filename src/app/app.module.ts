@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AfterLoginComponent } from './auth/after-login/after-login.component';
-import { ModelsComponent } from './auth/models/models.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { CreateHackathonComponent } from './admin/create-hackathon/create-hackathon.component';
 import { ViewHackathonsComponent } from './shared/components/view-hackathons/view-hackathons.component';
@@ -33,11 +32,10 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     LoginComponent,
     AfterLoginComponent,
-    ModelsComponent,
     SignupComponent,
     CreateHackathonComponent,
     ViewHackathonsComponent,

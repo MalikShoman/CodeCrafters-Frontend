@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { userSingUp } from 'src/app/models/userSingUp';
 
 @Component({
   selector: 'app-signup',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
   signUpForm!: FormGroup;
+  user: userSingUp = new userSingUp("","","","","")
 
   constructor(
     private formBuilder: FormBuilder,
@@ -30,11 +32,13 @@ export class SignupComponent implements OnInit {
   }
 
   signUp() {
+
+    this.user = this.signUpForm.value;
     console.log("inside singUp")
-    console.log(this.signUpForm)
+    console.log(this.user)
     if (this.signUpForm.valid) {
       const signUpData = this.signUpForm.value;
-      this.authService.signUp(signUpData).subscribe(
+      this.authService.signUp(this.user).subscribe(
         () => {
           // Handle successful sign-up
           this.router.navigate(['/login']);

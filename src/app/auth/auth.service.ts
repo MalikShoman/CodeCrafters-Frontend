@@ -7,7 +7,8 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:8746/api/auth'; // Update with your actual API URL
+  LogedIn:boolean = false;
+  private apiUrl = 'http://localhost:5121/api/auth'; // Update with your actual API URL
 
   constructor(private http: HttpClient) { }
 
@@ -26,6 +27,15 @@ export class AuthService {
       })
     );
   }
+
+  isLogedIn():boolean{
+    if(localStorage.getItem("token"))
+    {
+      return true;
+    }
+    return false;
+  }
+
 
   logout(): Observable<any> {
     // Implement logout logic if needed

@@ -9,26 +9,35 @@
         <label for="hackathonTheme">{{'Theme'|translate}}</label>
         <input type="text" class="form-control" id="hackathonTheme" [(ngModel)]="newHackathon.theme" required>
       </div>
-      <div class="form-group mb-3">
-        <label for="registrationStartDate">{{'Registration Start Date'|translate}} </label><br>
-        <p-calendar id="registrationStartDate" [(ngModel)]="newHackathon.registrationStartDate" dateFormat="dd/mm/yy" ></p-calendar>
+      
+      <div class="row">
+        <div class="col">
+          <div class="form-group mb-3">
+          <label for="registrationStartDate">{{'Registration Start Date'|translate}} </label><br>
+          <p-calendar id="registrationStartDate" [(ngModel)]="newHackathon.registrationStartDate" dateFormat="dd/mm/yy" ></p-calendar>
+        </div>
       </div>
-      <div class="form-group mb-3">
-        <label for="registrationEndDate">{{'Registration End Date'|translate}} </label><br>
-        <p-calendar id="registrationEndDate" [(ngModel)]="newHackathon.registrationEndDate" dateFormat="dd/mm/yy" ></p-calendar>
-      </div>
-      <div class="form-group mb-3">
-        <label for="eventDate">{{'Event Date'|translate}} </label><br>
-        <p-calendar id="eventDate" [(ngModel)]="newHackathon.eventDate" dateFormat="dd/mm/yy" ></p-calendar>
-      </div>
+        <div class="col">
+          <div class="form-group mb-3">
+            <label for="registrationEndDate">{{'Registration End Date'|translate}} </label><br>
+            <p-calendar id="registrationEndDate" [(ngModel)]="newHackathon.registrationEndDate" dateFormat="dd/mm/yy" ></p-calendar>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group mb-3">
+            <label for="eventDate">{{'Event Date'|translate}} </label><br>
+            <p-calendar id="eventDate" [(ngModel)]="newHackathon.eventDate" dateFormat="dd/mm/yy" ></p-calendar>
+          </div>
+        </div>
+
+    </div>
       <div class="form-group mb-3">
         <label for="challengeTitles">{{'Challenge Titles'|translate}}</label>
-        <ul class="list-group">
-          <li class="list-group-item" *ngFor="let title of newHackathon.challengeTitles; let i = index">
-            <input type="text" class="form-control" [(ngModel)]="newHackathon.challengeTitles[i]" required>
-            <button type="button" class="btn btn-danger btn-sm float-right" (click)="removeChallengeTitle(i)">Remove</button>
-          </li>
-        </ul>
+          <div class="list-group-item" *ngFor="let title of newHackathon.challengeTitles; let i = index">
+            <input type="text" id="challengeTitles" class="form-control" [(ngModel)]="newHackathon.challengeTitles[i]" required>
+            <button type="button" class="btn btn-danger btn-sm float-right"
+              (click)="removeChallengeTitle(i)">Remove</button>
+          </div>
         <button type="button" class="btn btn-primary" (click)="addChallengeTitle()">{{'Add Challenge'|translate}}</button>
       </div>
       <div class="form-group mb-3">
@@ -41,4 +50,4 @@
       </div>
       <button type="submit" class="btn btn-primary" (click)="onSubmit()">{{'add_new_hackathon'|translate}}</button>
     </div>
-  </div>  
+  </div>
